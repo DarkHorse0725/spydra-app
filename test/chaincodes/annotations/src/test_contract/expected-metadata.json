@@ -1,0 +1,188 @@
+{
+    "$schema": "https://hyperledger.github.io/fabric-chaincode-node/main/api/contract-schema.json",
+    "contracts": {
+        "TestContract": {
+            "name": "TestContract",
+            "contractInstance": {
+                "name": "TestContract",
+                "default": true
+            },
+            "transactions": [
+                {
+                    "tag": [
+                        "SUBMIT",
+                        "submitTx"
+                    ],
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "",
+                            "schema": {
+                                "type": "string"
+                            }
+                        },
+                        {
+                            "name": "name",
+                            "description": "",
+                            "schema": {
+                                "type": "string"
+                            }
+                        },
+                        {
+                            "name": "value",
+                            "description": "",
+                            "schema": {
+                                "type": "number"
+                            }
+                        },
+                        {
+                            "name": "extraID",
+                            "description": "",
+                            "schema": {
+                                "type": "string"
+                            }
+                        },
+                        {
+                            "name": "extraValue",
+                            "description": "",
+                            "schema": {
+                                "type": "number"
+                            }
+                        }
+                    ],
+                    "name": "createAsset"
+                },
+                {
+                    "tag": [
+                        "SUBMIT",
+                        "submitTx"
+                    ],
+                    "parameters": [
+                        {
+                            "name": "asset",
+                            "description": "",
+                            "schema": {
+                                "$ref": "#/components/schemas/Asset"
+                            }
+                        }
+                    ],
+                    "name": "updateAsset"
+                },
+                {
+                    "returns": {
+                        "$ref": "#/components/schemas/Asset"
+                    },
+                    "name": "getAsset",
+                    "tag": ["EVALUATE"],
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "",
+                            "schema": {
+                                "type": "string"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "info": {
+                "title": "",
+                "version": ""
+            }
+        },
+        "org.hyperledger.fabric": {
+            "name": "org.hyperledger.fabric",
+            "contractInstance": {
+                "name": "org.hyperledger.fabric"
+            },
+            "transactions": [
+                {
+                    "name": "GetMetadata"
+                }
+            ],
+            "info": {
+                "title": "",
+                "version": ""
+            }
+        }
+    },
+    "info": {
+        "version": "2.5.4",
+        "title": "ts_chaincode"
+    },
+    "components": {
+        "schemas": {
+            "Person": {
+                "$id": "Person",
+                "type": "object",
+                "properties": {
+                    "eyeColour": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Bob": {
+                "$id": "Bob",
+                "allOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "houseName": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "Person"
+                    }
+                ]
+            },
+            "Fred": {
+                "$id": "Fred",
+                "allOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "favouriteColour": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "Person"
+                    }
+                ]
+            },
+            "SomethingThatCouldBeAProperty": {
+                "$id": "SomethingThatCouldBeAProperty",
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "number"
+                    }
+                }
+            },
+            "Asset": {
+                "$id": "Asset",
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "number"
+                    },
+                    "extra": {
+                        "$ref": "SomethingThatCouldBeAProperty"
+                    }
+                }
+            }
+        }
+    }
+}

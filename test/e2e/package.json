@@ -1,0 +1,24 @@
+{
+  "name": "fabric-e2e-tests",
+  "version": "2.5.4",
+  "description": "",
+  "main": "docker.js",
+  "scripts": {
+    "build": "",
+    "test:e2e": "gulp -f ./scenario.js --reporter spec-junit-splitter-mocha-reporter 2>&1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "git-rev-sync": "3.0.1",
+    "gulp": "^4.0.2",
+    "toolchain": "2.5.4",
+    "delay": "5.0.0",
+    "fs-extra": "^10.0.1",
+    "ip": "^1.1.5",
+    "ajv": "^6.12.2",
+    "ajv-cli": "^3.2.1",
+    "spec-junit-splitter-mocha-reporter": "1.0.1"
+  }
+}

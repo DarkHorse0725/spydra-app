@@ -1,0 +1,20 @@
+{
+  "name": "chaincode",
+  "description": "Chaincode testing crud functionality",
+  "engines": {
+    "node": "^18.0.0"
+  },
+  "scripts": {
+    "start": "set -x && CORE_CHAINCODE_LOGGING_LEVEL=debug fabric-chaincode-node start"
+  },
+  "main": "index.js",
+  "engine-strict": true,
+  "engineStrict": true,
+  "version": "2.5.4",
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "fabric-shim": "2.5.4",
+    "fabric-contract-api": "2.5.4"
+  }
+}

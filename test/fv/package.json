@@ -1,0 +1,44 @@
+{
+  "name": "fvtests",
+  "version": "2.5.4",
+  "description": "fv tests",
+  "testFabricVersion": "main",
+  "testFabricThirdParty": "0.4.15",
+  "docsLatestVersion": "release-1.4",
+  "engines": {
+    "node": "^18.0.0"
+  },
+  "engineStrict": true,
+  "license": "Apache-2.0",
+  "scripts": {
+    "hello": "echo test fv project",
+    "test:fv": "mocha *.js --reporter spec-junit-splitter-mocha-reporter 2>&1",
+    "build": ""
+  },
+  "dependencies": {
+    "@sinonjs/referee-sinon": "~5.0.0",
+    "ajv": "^6.12.2",
+    "ajv-cli": "^3.2.1",
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "chai-things": "^0.2.0",
+    "del": "^3.0.0",
+    "delay": "5.0.0",
+    "eslint": "^6.6.0",
+    "fabric-contract-api": "2.5.4",
+    "fabric-shim": "2.5.4",
+    "fabric-shim-api": "2.5.4",
+    "fs-extra": "^10.0.1",
+    "git-rev-sync": "3.0.1",
+    "gulp": "^4.0.2",
+    "ip": "^1.1.5",
+    "istanbul-api": "^1.1.13",
+    "jsverify": "~0.8.4",
+    "mocha": "9.1.3",
+    "mockery": "^2.1.0",
+    "rewire": "6.0.0",
+    "sinon": "13.0.1",
+    "sinon-test": "^2.2.0",
+    "spec-junit-splitter-mocha-reporter": "1.0.1"
+  }
+}

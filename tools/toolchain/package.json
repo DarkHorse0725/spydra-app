@@ -1,0 +1,29 @@
+{
+  "name": "toolchain",
+  "version": "2.5.4",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "",
+    "startfabric": "gulp startFabric",
+    "stopfabric": "gulp stopFabric"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "delay": "5.0.0",
+    "fs-extra": "^10.0.1",
+    "git-rev-sync": "3.0.1",
+    "gulp-debug": "~4.0.0",
+    "gulp-eslint": "~6.0.0",
+    "gulp-rename": "~2.0.0",
+    "gulp-shell": "~0.7.1",
+    "merge-stream": "~2.0.0",
+    "npm-cli-login": "~0.1.1",
+    "ip": "^1.1.5",
+    "gulp-cli": "2.3.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
